@@ -13,3 +13,11 @@ M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86
 M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.Properties.Resources.resources
 M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache
 M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.pdb
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.exe
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.pdb
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\bin\Debug\DiceRoller.exe
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\bin\Debug\DiceRoller.pdb
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.csprojResolveAssemblyReference.cache
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.DiceRoller.resources
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.Properties.Resources.resources
+M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache

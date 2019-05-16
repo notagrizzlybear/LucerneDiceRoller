@@ -11,6 +11,8 @@ namespace DiceRoller
 {
     public partial class DiceRoller : Form
     {
+        DiceRoll diceRoll = new DiceRoll(); // initialized here to use only one instance of Random
+                                            // the seed is reset every initialization
         public DiceRoller()
         {
             InitializeComponent();
@@ -38,46 +40,63 @@ namespace DiceRoller
 
         private void rollbttn_Click(object sender, EventArgs e)
         {
-            string dicesText = dicebox.Text;
-            string diceTypeText;
+            string diceText = dicebox.Text;  // input text
             int diceCount = 0, diceType = 0;
-            DiceRoll diceRoll = new DiceRoll();
             int i = 0, j = 0;
             int diceSignPosition = 0;
+
+            bool inputError = false;  // used for exception handling
+            warningLabel.Text = "";
+
+
             //reading roll attributes
+
             //reading quantity of dice
-            if (char.IsDigit(dicesText[0]))
+            if (char.IsDigit(diceText[0]) && diceText[0] != '0')
             {
-                warningLabel.Text = "";
-                for (i = 0; char.IsDigit(dicesText[i]); i++) { }
+                for (i = 0; char.IsDigit(diceText[i]); i++) { }
                 diceSignPosition = i;
-                Int32.TryParse(dicesText.Substring(0, i), out diceCount);
+                Int32.TryParse(diceText.Substring(0, i), out diceCount);
             }
-            //reading type of dice (if quantity of dice is given)
-            if ((dicesText[diceSignPosition].Equals('d') || dicesText[diceSignPosition].Equals('k')) && 
-                char.IsDigit(dicesText[diceSignPosition + 1]))
+            // in case no number of dice is given (ex. "d100") the default quantity is 1
+            else if (diceText[0] == 'd' || diceText[0] == 'k')
             {
-                for (i = diceSignPosition + 1; i < dicesText.Length; i++)
+                diceCount = 1;
+                diceSignPosition = 0;
+            }
+            else inputError = true;
+                
+            //reading the type of dice (how many sides every dice should have)
+            if ((diceText[diceSignPosition].Equals('d') || diceText[diceSignPosition].Equals('k')) && 
+                char.IsDigit(diceText[diceSignPosition + 1]))
+            {
+                for (i = diceSignPosition + 1; i < diceText.Length; i++)
                 {
-                    if (!char.IsDigit(dicesText[i]))
+                    if (!char.IsDigit(diceText[i]))
                     {
-                        warningLabel.Text = "Niewłaściwy format testu!";
+                        inputError = true;
+                        j = 0;
                         break;
                     }
                     else j++;
                     // return diceType = 0 if any sign is not a digit!
                 }
-
-                //resultbox.Text = dicesText.Substring(diceSignPosition + 1, i);
-                diceTypeText = dicesText.Substring(diceSignPosition + 1, j);
-                Int32.TryParse(dicesText.Substring(diceSignPosition + 1, j), out diceType);
+                Int32.TryParse(diceText.Substring(diceSignPosition + 1, j), out diceType);
             }
 
             if (diceCount != 0 && diceType != 0)
             {
-                resultbox.Text = diceRoll.Roll(diceCount, diceType).ToString();
+                resultBox.Text = diceRoll.Roll(diceCount, diceType).ToString();
             }
-            else warningLabel.Text = "Niewłaściwy format testu!";
+            else inputError = true;
+
+            // exception handling
+            if (inputError)
+            {
+                warningLabel.Text = "Niewłaściwy format testu!";
+                resultBox.Text = "ERR!";
+            }
+                
         }
     }
 }

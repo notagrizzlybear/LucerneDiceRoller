@@ -1,0 +1,7 @@
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Release\DiceRoller.exe
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Release\DiceRoller.pdb
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Release\DiceRoller.Properties.Resources.resources
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Release\DiceRoller.exe
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Release\DiceRoller.pdb

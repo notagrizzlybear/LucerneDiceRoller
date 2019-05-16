@@ -1,0 +1,15 @@
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\DiceRoller.exe
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\DiceRoller.pdb
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\DiceRoller.Properties.Resources.resources
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\DiceRoller.exe
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\DiceRoller.pdb
+C:\Users\Brethil\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\DiceRoller.DiceRoller.resources
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.exe
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\bin\Debug\DiceRoller.exe
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\bin\Debug\DiceRoller.pdb
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.csprojResolveAssemblyReference.cache
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.DiceRoller.resources
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.Properties.Resources.resources
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache
+M:\Fantastyka\Projekty\Corvus Mysterium\CrowMaster\DiceRoller\DiceRoller\obj\x86\Debug\DiceRoller.pdb

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dicebox = new System.Windows.Forms.TextBox();
+            this.diceBox = new System.Windows.Forms.TextBox();
             this.resultBox = new System.Windows.Forms.TextBox();
             this.dicelbl = new System.Windows.Forms.Label();
             this.rollButton = new System.Windows.Forms.Button();
@@ -36,13 +36,13 @@
             this.warningLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dicebox
+            // diceBox
             // 
-            this.dicebox.Location = new System.Drawing.Point(41, 52);
-            this.dicebox.Name = "dicebox";
-            this.dicebox.Size = new System.Drawing.Size(100, 20);
-            this.dicebox.TabIndex = 0;
-            this.dicebox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.diceBox.Location = new System.Drawing.Point(41, 52);
+            this.diceBox.Name = "diceBox";
+            this.diceBox.Size = new System.Drawing.Size(100, 20);
+            this.diceBox.TabIndex = 0;
+            this.diceBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // resultBox
             // 
@@ -104,7 +104,7 @@
             this.Controls.Add(this.rollButton);
             this.Controls.Add(this.dicelbl);
             this.Controls.Add(this.resultBox);
-            this.Controls.Add(this.dicebox);
+            this.Controls.Add(this.diceBox);
             this.Name = "DiceRoller";
             this.Text = "DiceRoller";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -115,7 +115,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox dicebox;
+        private System.Windows.Forms.TextBox diceBox;
         private System.Windows.Forms.TextBox resultBox;
         private System.Windows.Forms.Label dicelbl;
         private System.Windows.Forms.Button rollButton;

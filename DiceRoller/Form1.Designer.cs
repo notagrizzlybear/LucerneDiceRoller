@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dicebox = new System.Windows.Forms.TextBox();
-            this.resultbox = new System.Windows.Forms.TextBox();
+            this.resultBox = new System.Windows.Forms.TextBox();
             this.dicelbl = new System.Windows.Forms.Label();
-            this.rollbttn = new System.Windows.Forms.Button();
+            this.rollButton = new System.Windows.Forms.Button();
             this.resultlbl = new System.Windows.Forms.Label();
             this.warningLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -44,14 +44,14 @@
             this.dicebox.TabIndex = 0;
             this.dicebox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // resultbox
+            // resultBox
             // 
-            this.resultbox.Location = new System.Drawing.Point(177, 52);
-            this.resultbox.Name = "resultbox";
-            this.resultbox.ReadOnly = true;
-            this.resultbox.Size = new System.Drawing.Size(100, 20);
-            this.resultbox.TabIndex = 1;
-            this.resultbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.resultBox.Location = new System.Drawing.Point(177, 52);
+            this.resultBox.Name = "resultBox";
+            this.resultBox.ReadOnly = true;
+            this.resultBox.Size = new System.Drawing.Size(100, 20);
+            this.resultBox.TabIndex = 1;
+            this.resultBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dicelbl
             // 
@@ -64,15 +64,15 @@
             this.dicelbl.Text = "Kości";
             this.dicelbl.Click += new System.EventHandler(this.label1_Click);
             // 
-            // rollbttn
+            // rollButton
             // 
-            this.rollbttn.Location = new System.Drawing.Point(41, 78);
-            this.rollbttn.Name = "rollbttn";
-            this.rollbttn.Size = new System.Drawing.Size(75, 23);
-            this.rollbttn.TabIndex = 4;
-            this.rollbttn.Text = "Rzuć";
-            this.rollbttn.UseVisualStyleBackColor = true;
-            this.rollbttn.Click += new System.EventHandler(this.rollbttn_Click);
+            this.rollButton.Location = new System.Drawing.Point(41, 78);
+            this.rollButton.Name = "rollButton";
+            this.rollButton.Size = new System.Drawing.Size(75, 23);
+            this.rollButton.TabIndex = 4;
+            this.rollButton.Text = "Rzuć";
+            this.rollButton.UseVisualStyleBackColor = true;
+            this.rollButton.Click += new System.EventHandler(this.rollbttn_Click);
             // 
             // resultlbl
             // 
@@ -101,9 +101,9 @@
             this.ClientSize = new System.Drawing.Size(328, 152);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.resultlbl);
-            this.Controls.Add(this.rollbttn);
+            this.Controls.Add(this.rollButton);
             this.Controls.Add(this.dicelbl);
-            this.Controls.Add(this.resultbox);
+            this.Controls.Add(this.resultBox);
             this.Controls.Add(this.dicebox);
             this.Name = "DiceRoller";
             this.Text = "DiceRoller";
@@ -116,9 +116,9 @@
         #endregion
 
         private System.Windows.Forms.TextBox dicebox;
-        private System.Windows.Forms.TextBox resultbox;
+        private System.Windows.Forms.TextBox resultBox;
         private System.Windows.Forms.Label dicelbl;
-        private System.Windows.Forms.Button rollbttn;
+        private System.Windows.Forms.Button rollButton;
         private System.Windows.Forms.Label resultlbl;
         private System.Windows.Forms.Label warningLabel;
     }

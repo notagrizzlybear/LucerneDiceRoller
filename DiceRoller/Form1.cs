@@ -40,10 +40,10 @@ namespace DiceRoller
 
         private void rollbttn_Click(object sender, EventArgs e)
         {
-            string result = diceRoll.ParsingInput(diceBox.Text);
-            if (result == null) resultBox.Text = "ERR!";
-            else if (result == "no input") resultBox.Text = "";
-            else resultBox.Text = result;
+            int result = diceRoll.ParsingInput(diceBox.Text);
+            if (result == -1) resultBox.Text = "ERR!";
+            else if (result == 0) resultBox.Text = "";
+            else resultBox.Text = result.ToString();
         }
     }
 }

@@ -27,17 +27,24 @@ namespace DiceRoller
             return result;
         }
 
-        public string ParsingInput(string input)
+
+        // iterprets input and computes the result
+        // returns result of computation as an integer
+        // returns -1 if something goes wrong (temporary solution!!!)
+        // returns 0 if no imput is given (temporary solution!!!)
+        public int ParsingInput(string input)
         {
             int number;
             int numberStart = 0, numberLength = 0;  // used in parsing
             int operand1, operand2;  // operands used during computation
-            Stack<int> numbers = new Stack<int>();
-            Stack<char> operators = new Stack<char>();
+            List<int> numbers = new List<int>();
+            List<char> operators = new List<char>();
+
+            char[] priority = { 'd', '^', '*', '/', '+', '-' };  // priority of operations from highest to lowest
 
             //bool inputException = false;
 
-            if (input == "") return "no input";  // if no input is given
+            if (input == "") return 0;  // if no input is given
 
             // reading input and filling both stacks
             for(int i = 0; i < input.Length; i++)
@@ -46,79 +53,102 @@ namespace DiceRoller
                 {
                     numberStart = i;
                     numberLength = 0;
-                    while(i < input.Length && char.IsDigit(input[i])){ i++; numberLength++; }  // reading the number, skipping iterations if number has more than one digit
+                    while (i < input.Length && char.IsDigit(input[i])) { i++; numberLength++; }  // reading the number, skipping iterations if number has more than one digit
                     Int32.TryParse(input.Substring(numberStart, numberLength), out number);
-                    numbers.Push(number);
+                    numbers.Add(number);
                     i--;
                 }
                 else if (input[i] == 'd' || input[i] == 'k')
                 {
-                    operators.Push('d');
+                    operators.Add('d');
                     if (operators.Count > numbers.Count)  // the case when there's no number before 'd'
                     {
-                        numbers.Push(1);  // if no number before 'd' is given, the default is 1
+                        numbers.Add(1);  // if no number before 'd' is given, the default is 1
                     }
                 }
                 else if (input[i] == '+')
                 {
-                    if (i == 0) return null;
-                    else operators.Push('+');
+                    if (i == 0) return -1;
+                    else operators.Add('+');
                 }
                 else if (input[i] == '-')
                 {
-                    if (i == 0) return null;
-                    else operators.Push('-');
+                    if (i == 0) return -1;
+                    else operators.Add('-');
                 }
                 else if (input[i] == '*')
                 {
-                    if (i == 0) return null;
-                    else operators.Push('*');
+                    if (i == 0) return -1;
+                    else operators.Add('*');
                 }
                 else if (input[i] == '/')
                 {
-                    if (i == 0) return null;
-                    else operators.Push('/');
+                    if (i == 0) return -1;
+                    else operators.Add('/');
                 }
                 else if (input[i] == '^')
                 {
-                    if (i == 0) return null;
-                    else operators.Push('^');
+                    if (i == 0) return -1;
+                    else operators.Add('^');
                 }
-                else return null;
+                else if (input[i] == ' ') { }  // skip spaces
+                else return -1;
             }
 
-            if (operators.Count > numbers.Count) return null;  // it occurs only if the input is wrong
+            if (operators.Count > numbers.Count) return -1;  // this occurs only if the input is wrong
 
-            // computing result
-            while(operators.Count > 0 && numbers.Count > 1)
+            // computing result. Searches through the operators list and computes operations with priority from highest to lowest
+            // Puts the sub-result in the place of the first operand and moves operators which are above one step down
+            // Nasty nested loop, gotta think of a better solution
+            while(operators[0] != '0')  // finish when there's no more operators
             {
-                operand2 = numbers.Pop();
-                operand1 = numbers.Pop();
-                switch (operators.Pop())
+                for(int i = 0; i < priority.Length; i++)
                 {
-                    case 'd':
-                        numbers.Push(Roll(operand1, operand2));
-                        break;
-                    case '+':
-                        numbers.Push(operand1 + operand2);
-                        break;
-                    case '-':
-                        numbers.Push(operand1 - operand2);
-                        break;
-                    case '*':
-                        numbers.Push(operand1 * operand2);
-                        break;
-                    case '/':
-                        numbers.Push(operand1 / operand2);
-                        break;
-                    case '^':
-                        numbers.Push(operand1 ^ operand2);
-                        break;
-                    default:
-                        return null;
+                    for(int j = 0; j < operators.Count; j++)
+                    {
+                        if(operators[j] == priority[i])
+                        {
+                            operand1 = numbers[j];
+                            operand2 = numbers[j + 1];
+                            switch (operators[j])
+                            {
+                                case 'd':
+                                    numbers[j] = Roll(operand1, operand2);
+                                    break;
+                                case '^':
+                                    numbers[j] = (int)Math.Pow(operand1, operand2);
+                                    break;
+                                case '*':
+                                    numbers[j] = operand1 * operand2;
+                                    break;
+                                case '/':
+                                    numbers[j] = operand1 / operand2;
+                                    break;
+                                case '+':
+                                    numbers[j] = operand1 + operand2;
+                                    break;
+                                case '-':
+                                    numbers[j] = operand1 - operand2;
+                                    break;
+                                default:
+                                    return -1; 
+                            }
+                            numbers[j + 1] = 0;  // this needs to be changed!!!
+                            operators[j] = '0';
+                            // move the operators & numbers one step down
+                            for(int k = j; k < operators.Count - 1; k++)
+                            {
+                                operators[k] = operators[k + 1];
+                                operators[k + 1] = '0';
+                                numbers[k + 1] = numbers[k + 2];
+                                numbers[k + 2] = 0;
+                            }
+                            j--; // prevents skipping of similar neighbouring operations (eg. 2+2+2)
+                        }
+                    }
                 }
             }
-            return numbers.Pop().ToString();  // result is the last number left in the stack (uncertain!)
+            return numbers[0];  // result is the last number left in the stack (uncertain!)
         }
     }
 

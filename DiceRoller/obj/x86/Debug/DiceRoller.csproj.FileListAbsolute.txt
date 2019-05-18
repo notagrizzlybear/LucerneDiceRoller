@@ -29,3 +29,4 @@ M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRolle
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\bin\Debug\DiceRoller.exe
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\bin\Debug\DiceRoller.pdb
+M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.Instruction.resources

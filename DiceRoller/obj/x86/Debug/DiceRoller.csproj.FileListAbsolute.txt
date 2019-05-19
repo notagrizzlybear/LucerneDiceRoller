@@ -23,10 +23,14 @@ M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\Dic
 M:\Pobierane\LucerneDiceRoller-addexceptionhandling\DiceRoller\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.exe
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.pdb
-M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.csprojResolveAssemblyReference.cache
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.DiceRoller.resources
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.Properties.Resources.resources
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.csproj.GenerateResource.Cache
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\bin\Debug\DiceRoller.exe
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\bin\Debug\DiceRoller.pdb
 M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.Instruction.resources
+M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\bin\Debug\DiceRoller.exe.manifest
+M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\bin\Debug\DiceRoller.application
+M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.exe.manifest
+M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.application
+M:\Pobierane\LucerneDiceRoller-Test-modifiers\DiceRoller\obj\x86\Debug\DiceRoller.csprojResolveAssemblyReference.cache

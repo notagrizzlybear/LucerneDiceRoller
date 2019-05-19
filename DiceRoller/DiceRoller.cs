@@ -11,6 +11,8 @@ namespace DiceRoller
 {
     public partial class DiceRoller : Form
     {
+        private const int errorCode = -2147483648;  // "magic number" used since I'm still unsure how to handle exceptions
+
         DiceRoll diceRoll = new DiceRoll(); // initialized here to use only one instance of Random
                                             // the seed is reset every initialization
 
@@ -58,7 +60,7 @@ namespace DiceRoller
             else
             {
                 result = diceRoll.ParsingInput(diceBox.Text);
-                if (result == -1) resultBox.Text = "ERROR!";
+                if (result == errorCode) resultBox.Text = "ERROR!";
                 else resultBox.Text = result.ToString();
             }
         }
@@ -72,7 +74,7 @@ namespace DiceRoller
                 else
                 {
                     result = diceRoll.ParsingInput(diceBox.Text);
-                    if (result == -1) resultBox.Text = "ERROR!";
+                    if (result == errorCode) resultBox.Text = "ERROR!";
                     else resultBox.Text = result.ToString();
                 }
                 e.SuppressKeyPress = true;

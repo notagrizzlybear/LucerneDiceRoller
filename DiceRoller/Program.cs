@@ -10,6 +10,8 @@ namespace DiceRoller
     {
         public Random rnd = new Random();
 
+        private const int errorCode = -2147483648;  // "magic number" used since I'm still unsure how to handle exceptions
+
         public int Roll(int dicecount, int dicetype)
         {
             int result = 0;
@@ -60,41 +62,40 @@ namespace DiceRoller
                 else if (input[i] == 'd' || input[i] == 'k')
                 {
                     operators.Add('d');
-                    if (operators.Count > numbers.Count)  // the case when there's no number before 'd'
+                    if (operators.Count > numbers.Count)  // in case there's no number before 'd'
                     {
                         numbers.Add(1);  // if no number before 'd' is given, the default is 1
                     }
                 }
                 else if (input[i] == '+')
                 {
-                    if (i == 0) return -1;
-                    else operators.Add('+');
+                    operators.Add('+');
                 }
                 else if (input[i] == '-')
                 {
-                    if (i == 0) return -1;
-                    else operators.Add('-');
+                    operators.Add('-');
+                    if (operators.Count > numbers.Count && i==0)  // in case there's no number before '-'
+                    {
+                        numbers.Add(0);  // -x = 0-x
+                    }
                 }
                 else if (input[i] == '*')
                 {
-                    if (i == 0) return -1;
-                    else operators.Add('*');
+                    operators.Add('*');
                 }
                 else if (input[i] == '/')
                 {
-                    if (i == 0) return -1;
-                    else operators.Add('/');
+                    operators.Add('/');
                 }
                 else if (input[i] == '^')
                 {
-                    if (i == 0) return -1;
-                    else operators.Add('^');
+                    operators.Add('^');
                 }
                 else if (input[i] == ' ') { }  // skip spaces
-                else return -1;
+                else return errorCode;
             }
 
-            if (operators.Count + 1 != numbers.Count) return -1;  // this occurs only if the input is wrong
+            if (operators.Count + 1 != numbers.Count) return errorCode;  // this occurs only if the input is wrong
 
 
             // computing result. Searches through the operators list and computes operations with priority from highest to lowest
@@ -122,6 +123,7 @@ namespace DiceRoller
                                     numbers[j] = operand1 * operand2;
                                     break;
                                 case '/':
+                                    if (operand2 == 0) return errorCode;
                                     numbers[j] = operand1 / operand2;
                                     break;
                                 case '+':

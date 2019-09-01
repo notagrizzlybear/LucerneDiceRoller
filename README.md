@@ -1,2 +1,2 @@
 # LucerneDiceRoller
-Simple dice rolling program for Lucerne
+Simple dice rolling program for Lucerne RPG
